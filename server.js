@@ -10,6 +10,7 @@ var morgan         = require('morgan');
 var app            = express();
 var port           = process.env.PORT || 3000;
 var config         = require('./resource/config');
+var Task             = require('./resource/models/task');
 
 app.use(methodOverride());
 app.use(bodyParser.urlencoded({'extended':'true'}));
