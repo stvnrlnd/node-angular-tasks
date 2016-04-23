@@ -1,0 +1,32 @@
+{
+  "name": "node-angular-tasks",
+  "version": "0.0.1",
+  "description": "A simple tasks application built with nodeJS and AngluarJS, based on the scotch.io tutorial (https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stvnrlnd/node-angular-tasks.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angularjs",
+    "tasks"
+  ],
+  "author": "Steven Roland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stvnrlnd/node-angular-tasks/issues"
+  },
+  "homepage": "https://github.com/stvnrlnd/node-angular-tasks#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0"
+  }
+}
