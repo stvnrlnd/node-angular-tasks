@@ -11,7 +11,7 @@ var app            = express();
 var api            = express.Router();
 var port           = process.env.PORT || 3000;
 var config         = require('./resource/config');
-var Task             = require('./resource/models/task');
+var Task           = require('./resource/models/task');
 
 app.use(methodOverride());
 app.use(bodyParser.urlencoded({'extended':'true'}));
@@ -24,6 +24,10 @@ mongoose.connect(config.dbURL);
 app.use(express.static(__dirname + '/base'));
 
 // ------ Build routes
+app.get('*', function(req, res) {
+    res.sendfile('./base/template/index.html');
+});
+
 api.route('/tasks')
   .get(function(req, res) {
     Task.find(function(err, tasks) {
