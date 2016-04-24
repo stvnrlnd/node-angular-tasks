@@ -24,7 +24,6 @@
     <![endif]-->
   </head>
   <body ng-app="taskApp">
-
     <div class="">
       <header>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -69,7 +68,7 @@
           <article class="list-group-item" ng-repeat="task in tasks">
             <input ng-model="task.complete" type="checkbox">
             <label ng-hide="editing">{{task.text}}</label>
-            <input ng-show="editing" ng-model="task.text" ng-blur="editing = false;" type="text">
+            <input ng-show="editing" ng-model="task.text" ng-blur="editing = false" type="text">
             <aside class="btn-group pull-right" role="group">
               <a href="" class="btn btn-xs btn-default" ng-click="editing = !editing">Edit</a>
               <a href="" class="btn btn-xs btn-default" ng-click="">Save</a>
