@@ -61,24 +61,8 @@
     </div>
     <div class="">
       <main class="container">
-        <header class="page-header">
-          <h1>Tasks</h1>
-        </header>
-        <section class="list-group" ng-controller="taskController">
-          <article>
-            <a href="" ng-click="createTask()">Add new task</a>
-          </article>
-          <article class="list-group-item" ng-repeat="task in tasks">
-            <input ng-model="task.complete" type="checkbox">
-            <label ng-hide="editing">{{task.text}}</label>
-            <input ng-show="editing" ng-model="task.text" ng-blur="editing = false" type="text">
-            <aside class="btn-group pull-right" role="group">
-              <a href="" class="btn btn-xs btn-default" ng-click="editing = !editing">Edit</a>
-              <a href="" class="btn btn-xs btn-default" ng-click="saveTask(task)">Save</a>
-              <a href="" class="btn btn-xs btn-danger" ng-click="deleteTask(task, $index)">Delete</a>
-            </aside>
-          </article>
-        </section>
+        <task-directive>
+        </task-directive>
       </main>
     </div>
     <div class="">
@@ -90,6 +74,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="app/core.js"></script>
+    <script src="app/tasks/taskController.js"></script>
+    <script src="app/tasks/taskService.js"></script>
+    <script src="app/tasks/taskDirective.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

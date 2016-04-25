@@ -1,0 +1,18 @@
+<section class="list-group">
+  <header class="page-header">
+    <h1>Tasks</h1>
+  </header>
+  <article>
+    <a href="" class="btn btn-link" ng-click="createTask()">Add new task</a>
+  </article>
+  <ul class="list-group">
+    <li class="list-group-item" ng-class="{'text-muted': task.complete}" ng-repeat="task in tasks | orderBy: 'complete'" ng-init="task.complete = false">
+      <input ng-model="task.complete" type="checkbox">
+      <label ng-click="editing = true" ng-hide="editing">{{task.text}}</label>
+      <input ng-show="editing" ng-model="task.text" ng-blur="editing = false; saveTask(task)" type="text">
+      <aside class="btn-group pull-right" role="group">
+        <a href="" class="btn btn-xs btn-danger" ng-click="deleteTask(task, $index)">Delete</a>
+      </aside>
+    </li>
+  </ul>
+</section>
