@@ -3,7 +3,7 @@
   angular.module('taskApp')
     .service('taskService', function($http) {
       this.getTasks = function(callback) {
-        $http.get('app/mock/tasks.json')
+        $http.get('api/tasks')
           .then(callback);
       };
       this.saveTask = function(task) {
