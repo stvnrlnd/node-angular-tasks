@@ -3,8 +3,14 @@
     <h1>Tasks</h1>
   </header>
   <article>
-    <a href="" class="btn btn-link" ng-click="createTask()">Add new task</a>
+    <div class="input-group">
+      <input ng-model="task.text" type="text" class="form-control" placeholder="What needs to be done?">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="createTask()" type="button">Add Task</button>
+      </span>
+    </div>
   </article>
+  <hr>
   <ul class="list-group">
     <li class="list-group-item" ng-class="{'text-muted': task.complete}" ng-repeat="task in tasks | orderBy: 'complete'" ng-init="task.complete = false">
       <input ng-model="task.complete" type="checkbox">

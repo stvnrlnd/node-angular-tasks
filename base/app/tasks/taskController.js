@@ -7,7 +7,7 @@
         console.log(response.data);
       });
       $scope.createTask = function() {
-        var task = {text: "What needs to be done?"};
+        var task = $scope.task;
         taskService.createTask(task);
         $scope.tasks.unshift(task);
       };
