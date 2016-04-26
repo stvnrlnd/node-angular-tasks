@@ -11,7 +11,7 @@ api.route('/tasks')
       if (err) {
         res.send(err);
       }
-      res.json({ message: 'Task created!' });
+      res.json({ message: 'Task created!', 'task' : task });
     });
   })
   .get(function(req, res) {
