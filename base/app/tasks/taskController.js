@@ -2,16 +2,17 @@
   'use strict';
   angular.module('taskApp')
     .controller('taskController', function($scope, taskService) {
+      taskService.getTasks(function(response) {
+        $scope.tasks = response.data;
+        console.log(response.data);
+      });
       $scope.createTask = function() {
-        var task = {text: "New task."};
+        var task = {text: "What needs to be done?"};
+        taskService.createTask(task);
         $scope.tasks.unshift(task);
       };
-      taskService.getTasks(function(response) {
-        console.log(response.data);
-        $scope.tasks = response.data;
-      });
-      $scope.saveTask = function(task) {
-        taskService.saveTask(task);
+      $scope.updateTask = function(task) {
+        taskService.updateTask(task);
       };
       $scope.deleteTask = function(task, $index) {
         taskService.deleteTask(task);
